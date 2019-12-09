@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Olá, {{login}}</ion-title>
+    <ion-buttons slot="primary" >
+      <ion-button color="tertiary" (click)="adicionarUsuario()">Novo
+        <ion-icon slot="end" name="add"></ion-icon>
+      </ion-button>
+      <ion-button color="tertiary" (click)="logout()" >
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+	    <ion-refresher-content
+	      pullingIcon="arrow-dropdown"
+	      pullingText="Pull to refresh"
+	      refreshingSpinner="circles"
+	      refreshingText="Carregando...">
+	    </ion-refresher-content>
+	  </ion-refresher>
+
+  <ion-list>
+      <ion-item-sliding *ngFor="let usuario of usuarios">
+          <ion-item-options side="start">
+            <ion-item-option color="danger" (click)="excluirUsuario(usuario.id_usuario)">Excluir</ion-item-option>
+          </ion-item-options>
+      
+          <ion-item>
+            <ion-label>{{usuario.nomeUsuario}}</ion-label>
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option color="secondary" (click)="mostrarUsuario(usuario.id_usuario, usuario.nomeUsuario, usuario.descricaoUsuario)">Mostrar</ion-item-option>
+            <ion-item-option (click)="atualizarUsuario(usuario.id_usuario, usuario.nomeUsuario, usuario.descricaoUsuario)">Atualizar</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+	    <ion-infinite-scroll-content
+	      loadingSpinner="bubbles"
+	      loadingText="Carregando mais dados...">
+	    </ion-infinite-scroll-content>
+	  </ion-infinite-scroll>
+
+</ion-content>
