@@ -3,8 +3,8 @@
 Esse projeto traz um CRUD completo em Ionic4 consumindo uma API própria que oferece também serviço de autenticação. A API está escrita
 em PHP e usando MySQL para persistência de dados.
 
-<img src="imgs/login.JPG"/>
-<img src="imgs/home.JPG"/>
+<img src="imgs/img1.png"/>
+<img src="imgs/img2.png"/>
 
 ## Requisitos
 
