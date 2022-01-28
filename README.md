@@ -1,5 +1,7 @@
 # Ionic4-api-php
 
+ATENÇÃO: eu criei esse projeto para fins de aprendizado. Ele está muito desatualizado e com uma quantidade grande de dependências desatualizadas e necessitando correções/atualizações.
+
 Esse projeto traz um CRUD completo em Ionic4 consumindo uma API própria que oferece também serviço de autenticação. A API está escrita
 em PHP e usando MySQL para persistência de dados.
 
